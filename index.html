@@ -14,26 +14,40 @@
             font-family: 'Arial', sans-serif;
             background: #1e1e2f;
             color: #cfcfcf;
+            overflow: hidden;
         }
         .container {
             text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
         a {
             color: #00aaff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         a:hover {
             text-decoration: underline;
             color: #0088cc;
         }
         a:active {
-            animation: clickAnimation 0.3s ease;
+            transform: scale(1.2);
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
         @keyframes clickAnimation {
-            0% { color: #00aaff; }
-            50% { color: #004466; }
-            100% { color: #00aaff; }
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -51,8 +65,12 @@
             const redirectLink = document.getElementById('redirect-link');
             redirectLink.href = robloxUrl;
             
-            redirectLink.addEventListener('click', function() {
-                redirectLink.style.color = '#004466';
+            redirectLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                redirectLink.style.animation = 'clickAnimation 0.3s ease';
+                setTimeout(function() {
+                    window.location.href = robloxUrl;
+                }, 300); // Wait for the animation to finish
             });
 
             window.location.href = robloxUrl;
