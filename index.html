@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting to Roblox</title>
     <meta http-equiv="refresh" content="0; url=roblox://experiences/start?placeId=PLACE_ID&gameInstanceId=JOB_ID">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a id="redirect-link" href="#">click here</a>.</p>
-    <script type="text/javascript">
-        var placeId = new URLSearchParams(window.location.search).get('placeId');
-        var gameInstanceId = new URLSearchParams(window.location.search).get('gameInstanceId');
-        var robloxUrl = `roblox://experiences/start?placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
-        document.getElementById('redirect-link').href = robloxUrl;
-        window.location.href = robloxUrl;
+    <div class="container">
+        <p>If you are not redirected automatically, <a id="redirect-link" href="#">click here</a>.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const placeId = params.get('placeId');
+            const gameInstanceId = params.get('gameInstanceId');
+            const robloxUrl = `roblox://experiences/start?placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
+            
+            const redirectLink = document.getElementById('redirect-link');
+            redirectLink.href = robloxUrl;
+            
+            window.location.href = robloxUrl;
+        });
     </script>
 </body>
 </html>
