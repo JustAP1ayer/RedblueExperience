@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting to Roblox</title>
-    <meta http-equiv="refresh" content="0; url=roblox://experiences/start?placeId=PLACE_ID&gameInstanceId=JOB_ID">
     <style>
         body {
             display: flex;
@@ -12,19 +11,29 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f9;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background: #1e1e2f;
+            color: #cfcfcf;
         }
         .container {
             text-align: center;
         }
         a {
-            color: #007bff;
+            color: #00aaff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         a:hover {
             text-decoration: underline;
+            color: #0088cc;
+        }
+        a:active {
+            animation: clickAnimation 0.3s ease;
+        }
+        @keyframes clickAnimation {
+            0% { color: #00aaff; }
+            50% { color: #004466; }
+            100% { color: #00aaff; }
         }
     </style>
 </head>
@@ -42,6 +51,10 @@
             const redirectLink = document.getElementById('redirect-link');
             redirectLink.href = robloxUrl;
             
+            redirectLink.addEventListener('click', function() {
+                redirectLink.style.color = '#004466';
+            });
+
             window.location.href = robloxUrl;
         });
     </script>
