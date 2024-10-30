@@ -63,8 +63,10 @@
             const robloxUrl = `roblox://experiences/start?${paramString}`;
             
             const redirectLink = document.getElementById('redirect-link');
+            
             redirectLink.href = robloxUrl;
             window.location.href = robloxUrl;
+            console.log(robloxUrl);
             
             redirectLink.addEventListener('click', function(event) {
                 event.preventDefault();
