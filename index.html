@@ -58,23 +58,24 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const params = new URLSearchParams(window.location.search);
-            const placeId = params.get('placeId');
-            const gameInstanceId = params.get('gameInstanceId');
-            const robloxUrl = `roblox://experiences/start?placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
+            const paramString = params.toString();
+
+            const robloxUrl = `roblox://experiences/start?${paramString}`;
             
             const redirectLink = document.getElementById('redirect-link');
             redirectLink.href = robloxUrl;
+            window.location.href = robloxUrl;
             
             redirectLink.addEventListener('click', function(event) {
                 event.preventDefault();
                 redirectLink.style.animation = 'clickAnimation 0.3s ease';
                 setTimeout(function() {
                     window.location.href = robloxUrl;
-                }, 300); // Wait for the animation to finish
+                }, 300); 
             });
-
-            window.location.href = robloxUrl;
         });
     </script>
+</body>
+
 </body>
 </html>
