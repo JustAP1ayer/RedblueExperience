@@ -1,6 +1,6 @@
 # Roblox Game Joiner
 
--# Forked this README off returnrqt
+<small>Forked this README off returnrqt</small>
 
 This tool allows you to launch Roblox with custom parameters directly from a website.
 
