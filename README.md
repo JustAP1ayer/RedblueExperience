@@ -26,7 +26,7 @@ This tool allows you to launch Roblox with custom parameters directly from a web
 
 ## Example URLs
 - **Join Crossroads**:  
-  `https://justap1ayer.github.io/RedblueExperience/index.html/?placeid=1818`
+  `https://justap1ayer.github.io/RedblueExperience/index.html?placeid=1818`
 
 - **Join Crossroads Server with Job ID**:  
   `https://justap1ayer.github.io/RedblueExperience/index.html?placeid=1818&gameInstanceId=6a62d499-b69c-4300-ac3f-ad2f395f4097`
