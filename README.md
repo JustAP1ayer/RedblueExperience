@@ -1,5 +1,7 @@
 # Roblox Game Joiner
 
+-# Forked this README off returnrqt
+
 This tool allows you to launch Roblox with custom parameters directly from a website.
 
 ## Roblox Launch Parameters
@@ -15,6 +17,7 @@ This tool allows you to launch Roblox with custom parameters directly from a web
 - **`callId`**: Joins a game using a [call ID](https://devforum.roblox.com/t/the-future-of-immersive-communication-on-roblox/2701137).
 - **`eventId`**: Adds the ID of an [experience event](https://create.roblox.com/docs/production/promotion/experience-events).
 - **`id`**: ?
+- **`browserTrackerId`**: ?
 
 ### Tracking Parameters
 - **`joinAttemptOrigin`**: Indicates the [origin of the join](https://gist.github.com/returnrqt/c524cd4f93062ee90df8c5b2604133d4) attempt.
